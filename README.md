@@ -1,1 +1,1 @@
-# spruce_box_frontend
+React app with TypeScript and ESLint using Webpack
