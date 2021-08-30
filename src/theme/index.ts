@@ -5,8 +5,12 @@ import { blue } from './colors';
 export const create = ():Theme => {
   return createTheme({
     palette: {
+      background: {
+        default: "#ffffff"
+      },
       primary: {
         main: blue,
+        contrastText: 'white'
       },
     },
     typography: {
