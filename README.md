@@ -1,1 +1,1 @@
-React app with TypeScript and ESLint using Webpack
+React app with TypeScript and Webpack
