@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import loginReducer from './redux/reducers';
+import loginReducer from './scenes/Authentication/Login/slice';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import history from './utils/history';
 
