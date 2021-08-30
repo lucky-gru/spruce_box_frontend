@@ -1,8 +1,12 @@
-import path from "path";
-import { Configuration as WebpackConfiguration, HotModuleReplacementPlugin  } from "webpack";
-import { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import ESLintPlugin from "eslint-webpack-plugin";
+import path from 'path';
+import {
+  Configuration as WebpackConfiguration,
+  HotModuleReplacementPlugin,
+  DefinePlugin,
+} from 'webpack';
+import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
@@ -11,51 +15,66 @@ interface Configuration extends WebpackConfiguration {
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 const config: Configuration = {
-  mode: "development",
+  mode: 'development',
   output: {
-    publicPath: "/",
+    publicPath: '/',
   },
-  entry: "./src/index.tsx",
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
         test: /\.(ts|js)x?$/i,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             presets: [
-              "@babel/preset-env",
-              "@babel/preset-react",
-              "@babel/preset-typescript",
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@babel/preset-typescript',
             ],
           },
         },
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
+      },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "public/index.html",
+      template: 'public/index.html',
     }),
     new HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin({
-      async: false
+      async: false,
     }),
     new ESLintPlugin({
-      extensions: ["js", "jsx", "ts", "tsx"],
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
+    }),
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL),
     }),
   ],
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
-    static: path.join(__dirname, "build"),
+    static: path.join(__dirname, 'build'),
     historyApiFallback: true,
     port: 3000,
     open: true,
-    hot: true
+    hot: true,
   },
 };
 

@@ -1,5 +1,5 @@
 import path from "path";
-import { Configuration } from "webpack";
+import { Configuration, DefinePlugin } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
@@ -29,6 +29,17 @@ const config: Configuration = {
           },
         },
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
     ],
   },
   resolve: {
@@ -45,6 +56,10 @@ const config: Configuration = {
       extensions: ["js", "jsx", "ts", "tsx"],
     }),
     new CleanWebpackPlugin(),
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL),
+    }),
   ],
 };
 

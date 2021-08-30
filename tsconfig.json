@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "./build",
+    "rootDir": "./",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
@@ -11,7 +14,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "commonjs",
+    "target": "es2018",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
   },
   "include": ["src"]
 }
