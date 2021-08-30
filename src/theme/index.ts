@@ -1,6 +1,6 @@
 import { createTheme} from '@material-ui/core/styles';
 import type { Theme } from "@material-ui/core/styles";
-import { blue } from './colors';
+import { blue, valencia } from './colors';
 
 export const create = ():Theme => {
   return createTheme({
@@ -12,6 +12,9 @@ export const create = ():Theme => {
         main: blue,
         contrastText: 'white'
       },
+      warning: {
+        main: valencia
+      }
     },
     typography: {
       fontFamily: ['D-DIN-Exp', 'Helvetica Neue', 'sans-serif'].join(','),
@@ -24,7 +27,7 @@ export const create = ():Theme => {
             boxSizing: 'border-box',
           },
         },
-      },
+      }
     },
   });
 }

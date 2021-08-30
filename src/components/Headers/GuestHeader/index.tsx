@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router';
 
 import { LogoIcon } from '../../Icons/LogoIcon';
 import { ChevronDownIcon } from '../../Icons/ChevronDownIcon';
@@ -66,6 +67,15 @@ const useStyles = makeStyles((theme) => ({
 
 const Header: FC = () => {
   const classes = useStyles();
+  const history = useHistory();
+
+  const goLogin = () => {
+    history.push('/login');
+  }
+
+  const goSignUp = () => {
+    history.push('/signup');
+  }
 
   return (
     <div className={classes.root}>
@@ -83,7 +93,7 @@ const Header: FC = () => {
       </div>
       <div className={classes.btnWrapper}>
         <div className={classes.loginBtn}>
-          <Button disableTouchRipple>Log In</Button>
+          <Button disableTouchRipple onClick={goLogin}>Log In</Button>
         </div>
         <div className={classes.getStarted}>
           <Button
@@ -91,6 +101,7 @@ const Header: FC = () => {
             variant="contained"
             fullWidth
             disableElevation
+            onClick={goSignUp}
           >
             Get Started
           </Button>

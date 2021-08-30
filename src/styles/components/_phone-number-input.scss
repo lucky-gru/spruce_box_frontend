@@ -1,0 +1,39 @@
+.phone-number-input-field {
+  //  This is to align with DOB
+  &.register {
+    margin-top: 4px;
+  }
+
+  .react-tel-input {
+    .phone-number-input {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    .special-label {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
+      color: #31333B;
+      left: -4px;
+    }
+
+    .form-control {
+      width: 100%;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid #EAEFF5;
+      border-radius: 0px;
+      box-shadow: none;
+      transition: none;
+      &:focus, &:hover {
+        box-shadow: none;
+        transition: none;
+      }
+    }
+
+    .selected-flag {
+      padding-left: 0px;
+    }
+  }
+}

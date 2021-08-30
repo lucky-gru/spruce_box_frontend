@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     color: darkGrey
   },
+  main: {
+    height: 'calc(100vh - 105.44px)'
+  }
 }));
 
 const Layout: FC = ({ children, }) => {
@@ -16,7 +19,7 @@ const Layout: FC = ({ children, }) => {
   return (
     <div className= {classes.root}>
       <Header />
-      <div>
+      <div className={classes.main}>
         {children}
       </div>
     </div>
