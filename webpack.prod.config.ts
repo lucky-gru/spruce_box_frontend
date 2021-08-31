@@ -75,10 +75,6 @@ const config: Configuration = {
       extensions: ["js", "jsx", "ts", "tsx"],
     }),
     new CleanWebpackPlugin(),
-    new DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
-      'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL),
-    }),
   ],
 };
 

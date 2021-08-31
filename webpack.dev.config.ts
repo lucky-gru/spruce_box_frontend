@@ -82,10 +82,6 @@ const config: Configuration = {
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
-    new DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
-      'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL),
-    }),
   ],
   devtool: 'inline-source-map',
   devServer: {
