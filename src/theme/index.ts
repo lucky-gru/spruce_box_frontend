@@ -1,6 +1,20 @@
 import { createTheme} from '@material-ui/core/styles';
 import type { Theme } from "@material-ui/core/styles";
 import { blue, valencia } from './colors';
+import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
+
+declare module "@material-ui/core/styles/createBreakpoints" {
+  interface BreakpointOverrides {
+    xs: true; // removes the `xs` breakpoint
+    sm: true;
+    md: true;
+    lg: true;
+    xl: true;
+    tablet: true; // adds the `tablet` breakpoint
+    laptop: true;
+    desktop: true;
+  }
+}
 
 export const create = ():Theme => {
   return createTheme({
@@ -28,6 +42,18 @@ export const create = ():Theme => {
           },
         },
       }
+    },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 960,
+        lg: 1280,
+        xl: 1920,
+        tablet: 640,
+        laptop: 1024,
+        desktop: 1280,
+      },
     },
   });
 }

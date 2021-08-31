@@ -30,12 +30,19 @@ const useStyles = makeStyles((theme) => ({
     height: '622px',
     display: 'flex',
     flexDirection: 'column',
+    [theme.breakpoints.down('sm')]: {
+      margin: theme.spacing(2),
+    },
   },
   loginLabel: {
     fontWeight: 'bold',
     fontSize: '64px',
     lineHeight: '68px',
     textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '48px',
+      lineHeight: '56px',
+    },
   },
   logoWrapper: {
     textAlign: 'center',
@@ -43,7 +50,11 @@ const useStyles = makeStyles((theme) => ({
   inputForm: {
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
     marginTop: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      marginTop: theme.spacing(1),
+    },
   },
   textFieldWrapper: {
     marginLeft: theme.spacing(2),
@@ -63,6 +74,9 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: '18px',
       color: darkGrey,
     },
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: theme.spacing(1),
+    },
   },
   login: {
     '& .MuiButton-root': {
@@ -70,7 +84,11 @@ const useStyles = makeStyles((theme) => ({
       height: '56px',
       borderRadius: '28px',
       fontSize: '18px',
-      textTransform: 'none'
+      textTransform: 'none',
+      [theme.breakpoints.down('sm')]: {
+        height: '48px',
+        borderRadius: '24px',
+      },
     },
   },
   forgotPass: {
@@ -78,7 +96,11 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     width: '100%',
     cursor: 'pointer',
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: theme.spacing(1),
+    },
+
   },
   dontHave: {
     textAlign: 'center',
@@ -91,7 +113,8 @@ const useStyles = makeStyles((theme) => ({
     color: blue,
     width: '100%',
     textDecoration: 'underline',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    fontWeight: 'bold'
   }
 }));
 

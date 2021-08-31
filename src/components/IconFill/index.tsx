@@ -6,8 +6,8 @@ import { valencia, blue, lilacWhite } from '../../theme/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: theme.spacing(8),
-    height: theme.spacing(8),
+    minWidth: theme.spacing(8),
+    minHeight: theme.spacing(8),
     background: lilacWhite,
     borderRadius: '16px',
     display: 'flex',

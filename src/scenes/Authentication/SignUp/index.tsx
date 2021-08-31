@@ -31,12 +31,9 @@ const useStyles = makeStyles((theme) => ({
     width: '500px',
     display: 'flex',
     flexDirection: 'column',
-  },
-  loginLabel: {
-    fontWeight: 'bold',
-    fontSize: '64px',
-    lineHeight: '68px',
-    textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      margin: theme.spacing(2),
+    },
   },
   textCenter: {
     textAlign: 'center',
@@ -45,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     marginTop: theme.spacing(1),
+    alignItems: 'center',
   },
   textFieldWrapper: {
     marginLeft: theme.spacing(2),
@@ -64,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: '18px',
       color: darkGrey,
     },
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: theme.spacing(1),
+    },
   },
   signup: {
     '& .MuiButton-root': {
@@ -72,6 +73,10 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: '28px',
       fontSize: '18px',
       textTransform: 'none',
+      [theme.breakpoints.down('sm')]: {
+        height: '48px',
+        borderRadius: '24px',
+      },
     },
     marginBottom: theme.spacing(2),
   },
@@ -79,6 +84,10 @@ const useStyles = makeStyles((theme) => ({
     color: darkGrey,
     textAlign: 'center',
     width: '100%',
+    fontWeight: 'bold',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '12px'
+    },
   },
   dontHave: {
     textAlign: 'center',
@@ -92,6 +101,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     textDecoration: 'underline',
     cursor: 'pointer',
+    fontWeight: 'bold'
   },
   link: {
     textDecoration: 'underline',
@@ -107,12 +117,19 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '54px',
     lineHeight: '58px',
     fontWeight: 'bold',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '32px',
+      lineHeight: '38px',
+    },
   },
   name: {
     display: 'flex',
   },
   signinLink: {
     marginTop: theme.spacing(1),
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '12px'
+    },
   },
 }));
 

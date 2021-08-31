@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     padding: '28.73px 48px',
     position: 'relative',
+    [theme.breakpoints.down('sm')]: {
+      padding: '16px 24px'
+    },
   },
   navItem: {
     display: 'flex',
@@ -44,6 +47,9 @@ const useStyles = makeStyles((theme) => ({
     right: '50px',
     display: 'flex',
     flexDirection: 'row',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    },
   },
   loginBtn: {
     '& .MuiButton-root': {
